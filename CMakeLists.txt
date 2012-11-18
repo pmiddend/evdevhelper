@@ -21,11 +21,11 @@ link_directories(
 
 # fcppt begin
 find_package(
-	Fcppt REQUIRED)
+	fcppt REQUIRED)
 include_directories(
-	${Fcppt_INCLUDE_DIRS})
+	${fcppt_INCLUDE_DIRS})
 add_definitions(
-	${Fcppt_DEFINITIONS})
+	${fcppt_DEFINITIONS})
 # fcppt end
 
 add_definitions(
@@ -44,8 +44,8 @@ add_executable(
 
 target_link_libraries(
 	joypad_echo_buttons
-	${Fcppt_core_LIBRARIES}
-	${Fcppt_filesystem_LIBRARIES}
+	${fcppt_core_TARGET}
+	${fcppt_filesystem_TARGET}
 	${Boost_LIBRARIES})
 
 install(
@@ -61,8 +61,8 @@ add_executable(
 
 target_link_libraries(
 	joypad_is_joypad
-	${Fcppt_core_LIBRARIES}
-	${Fcppt_filesystem_LIBRARIES}
+	${fcppt_core_TARGET}
+	${fcppt_filesystem_TARGET}
 	${Boost_LIBRARIES})
 
 install(
