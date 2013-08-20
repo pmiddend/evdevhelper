@@ -10,7 +10,7 @@ include(
 
 find_package(
 	Boost 1.45.0 REQUIRED COMPONENTS
-	chrono
+	filesystem
 	system)
 
 include_directories(
