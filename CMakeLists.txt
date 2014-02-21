@@ -19,17 +19,8 @@ link_directories(
 	${Boost_LIBRARY_DIRS})
 # boost end
 
-# fcppt begin
 find_package(
 	fcppt REQUIRED)
-include_directories(
-	${fcppt_INCLUDE_DIRS})
-add_definitions(
-	${fcppt_DEFINITIONS})
-# fcppt end
-
-add_definitions(
-	-Wno-old-style-cast -std=c++0x)
 
 set(
 	JOYPAD_COMMON_FILES
@@ -41,6 +32,9 @@ add_executable(
 	joypad_echo_buttons
 	echo_buttons.cpp
 	${JOYPAD_COMMON_FILES})
+
+fcppt_utils_set_target_compiler_flags(
+	joypad_echo_buttons)
 
 target_link_libraries(
 	joypad_echo_buttons
@@ -58,6 +52,9 @@ add_executable(
 	joypad_is_joypad
 	is_joypad.cpp
 	${JOYPAD_COMMON_FILES})
+
+fcppt_utils_set_target_compiler_flags(
+	joypad_is_joypad)
 
 target_link_libraries(
 	joypad_is_joypad
